@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="1.3" data-basepath="." data-revision="Mon Aug 10 2015 16:19:43 GMT+0300 (EEST)">
+    <div class="book" data-level="1.3" data-basepath="." data-revision="Mon Aug 10 2015 16:24:38 GMT+0300 (EEST)">
     
 
 <div class="book-summary">
@@ -661,8 +661,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
 </code></pre>
 <p>We added a script that refreshes the application when a change occurs. You will also need to add an entry point to your configuration:</p>
+<p><em>webpack.config.js</em></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
-
 
 <span class="hljs-built_in">module</span>.exports = {
     entry: [<span class="hljs-string">&apos;webpack/hot/dev-server&apos;</span>, path.resolve(__dirname, <span class="hljs-string">&apos;app/main.js&apos;</span>)],
