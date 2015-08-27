@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="3.3" data-basepath="." data-revision="Tue Aug 25 2015 18:51:54 GMT+0300 (EEST)">
+    <div class="book" data-level="3.3" data-basepath="." data-revision="Thu Aug 27 2015 07:34:42 GMT+0300 (EEST)">
     
 
 <div class="book-summary">
@@ -650,7 +650,7 @@
                         <p>If you want to use compiled CSS, there are two loaders available for you. The <strong>less-loader</strong> and the <strong>sass-loader</strong>. Depending on your preference, this is how you set it up.</p>
 <h2 id="installing-and-configuring-the-loader">Installing and configuring the loader</h2>
 <p><code>npm install less-loader</code> or <code>npm install sass-loader</code>.</p>
-<p><em>webpack.config.js</em></p>
+<p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 <span class="hljs-keyword">var</span> config = {
   entry: path.resolve(__dirname, <span class="hljs-string">&apos;app/main.js&apos;</span>)
@@ -661,8 +661,8 @@
   <span class="hljs-built_in">module</span>: {
     loaders: [{
       test: <span class="hljs-regexp">/\.jsx$/</span>,
-      loader: <span class="hljs-string">&apos;jsx&apos;</span>
-    }, 
+      loader: <span class="hljs-string">&apos;babel&apos;</span>
+    },
 
     <span class="hljs-comment">// LESS</span>
     {

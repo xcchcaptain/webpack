@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="3.1" data-basepath="." data-revision="Tue Aug 25 2015 18:51:54 GMT+0300 (EEST)">
+    <div class="book" data-level="3.1" data-basepath="." data-revision="Thu Aug 27 2015 07:34:42 GMT+0300 (EEST)">
     
 
 <div class="book-summary">
@@ -652,7 +652,7 @@
 <h2 id="preparing-css-loading">Preparing CSS loading</h2>
 <p>Install the two loaders: <code>npm install css-loader style-loader --save-dev</code>.</p>
 <p>In the <em>webpack.config.js</em> file you can add the following loader configuration:</p>
-<p><em>webpack.config.js</em></p>
+<p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 <span class="hljs-keyword">var</span> config = {
   entry: path.resolve(__dirname, <span class="hljs-string">&apos;app/main.js&apos;</span>)
@@ -663,7 +663,7 @@
   <span class="hljs-built_in">module</span>: {
     loaders: [{
       test: <span class="hljs-regexp">/\.jsx$/</span>,
-      loader: <span class="hljs-string">&apos;jsx&apos;</span>
+      loader: <span class="hljs-string">&apos;babel&apos;</span>
     }, {
       test: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-comment">// Only .css files</span>
       loader: <span class="hljs-string">&apos;style!css&apos;</span> <span class="hljs-comment">// Run both loaders</span>
@@ -675,11 +675,11 @@
 </code></pre>
 <h2 id="loading-a-css-file">Loading a CSS file</h2>
 <p>Loading a CSS file is a simple as loading any file:</p>
-<p><em>main.js</em></p>
+<p><strong>main.js</strong></p>
 <pre><code class="lang-javascript">import <span class="hljs-string">&apos;./main.css&apos;</span>;
 <span class="hljs-comment">// Other code</span>
 </code></pre>
-<p><em>Component.jsx</em></p>
+<p><strong>Component.jsx</strong></p>
 <pre><code class="lang-javascript">import <span class="hljs-string">&apos;./Component.css&apos;</span>;
 import React from <span class="hljs-string">&apos;react&apos;</span>;
 
@@ -694,34 +694,34 @@ export <span class="hljs-keyword">default</span> React.createClass({
 <p>Depending on your application you might consider three main strategies. In addition to this you should consider including some of your basic CSS inlined with the initial payload (index.html). This will set the structure and maybe a loader while the rest of your application is downloading and executing.</p>
 <h3 id="all-in-one">All in one</h3>
 <p>In your main entry point, e.g. <code>app/main.js</code> you can load up your entire CSS for the whole project:</p>
-<p><em>app/main.js</em></p>
+<p><strong>app/main.js</strong></p>
 <pre><code class="lang-javascript">import <span class="hljs-string">&apos;./project-styles.css&apos;</span>;
 <span class="hljs-comment">// Other JS code</span>
 </code></pre>
 <p>The CSS is included in the application bundle and does not need to download.</p>
 <h3 id="lazy-loading">Lazy loading</h3>
 <p>If you take advantage of lazy loading by having multiple entry points to your application, you can include specific CSS for each of those entry points:</p>
-<p><em>app/main.js</em></p>
+<p><strong>app/main.js</strong></p>
 <pre><code class="lang-javascript">import <span class="hljs-string">&apos;./style.css&apos;</span>;
 <span class="hljs-comment">// Other JS code</span>
 </code></pre>
-<p><em>app/entryA/main.js</em></p>
+<p><strong>app/entryA/main.js</strong></p>
 <pre><code class="lang-javascript">import <span class="hljs-string">&apos;./style.css&apos;</span>;
 <span class="hljs-comment">// Other JS code</span>
 </code></pre>
-<p><em>app/entryB/main.js</em></p>
+<p><strong>app/entryB/main.js</strong></p>
 <pre><code class="lang-javascript">import <span class="hljs-string">&apos;./style.css&apos;</span>;
 <span class="hljs-comment">// Other JS code</span>
 </code></pre>
-<p>You divide your modules by folders and include both CSS and JavaScript files in those folders. Again, the imported CSS is included in each entry bundle when running in production. </p>
+<p>You divide your modules by folders and include both CSS and JavaScript files in those folders. Again, the imported CSS is included in each entry bundle when running in production.</p>
 <h3 id="component-specific">Component specific</h3>
 <p>With this strategy you create a CSS file for each component. It is common to namespace the CSS classes with the component name, thus avoiding some class of one component interfering with the class of an other.</p>
-<p>*app/components/MyComponent.css</p>
+<p><strong>app/components/MyComponent.css</strong></p>
 <pre><code class="lang-css"><span class="hljs-class">.MyComponent-wrapper</span> <span class="hljs-rules">{
   <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#EEE</span></span></span>;
 <span class="hljs-rule">}</span></span>
 </code></pre>
-<p><em>app/components/MyComponent.jsx</em></p>
+<p><strong>app/components/MyComponent.jsx</strong></p>
 <pre><code>import &apos;./MyComponent.css&apos;;
 import React from &apos;react&apos;;
 
@@ -736,7 +736,7 @@ export default React.createClass({
 });
 </code></pre><h2 id="using-inline-styles-instead-of-stylesheets">Using inline styles instead of stylesheets</h2>
 <p>With &quot;React Native&quot; you do not use stylesheets at all, you only use the <em>style-attribute</em>. By defining your CSS as objects. Depending on your project, you might consider this as your CSS strategy.</p>
-<p><em>app/components/MyComponent.jsx</em></p>
+<p><strong>app/components/MyComponent.jsx</strong></p>
 <pre><code class="lang-javascript">import React from <span class="hljs-string">&apos;react&apos;</span>;
 
 <span class="hljs-keyword">var</span> style = {
