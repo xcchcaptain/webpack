@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.2" data-basepath="." data-revision="Thu Aug 27 2015 07:34:42 GMT+0300 (EEST)">
+    <div class="book" data-level="2.2" data-basepath="." data-revision="Tue Sep 01 2015 10:58:03 GMT+0300 (EEST)">
     
 
 <div class="book-summary">
@@ -648,9 +648,12 @@
                     <section class="normal" id="section-">
                     
                         <p>You might notice after requiring React JS into your project that the time it takes from a save to a finished rebundle of your application takes more time. In development you ideally want from 200-800 ms rebundle speed, depending on what part of the application you are working on.</p>
+<blockquote>
+<p>IMPORTANT! This setup a minified, production version of React. As a result you will lose <code>propTypes</code> based type validation!</p>
+</blockquote>
 <h2 id="running-minified-file-in-development">Running minified file in development</h2>
 <p>Instead of making Webpack go through React JS and all its dependencies, you can override the behavior in development.</p>
-<p><em>webpack.config.js</em></p>
+<p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 <span class="hljs-keyword">var</span> node_modules = path.resolve(__dirname, <span class="hljs-string">&apos;node_modules&apos;</span>);
 <span class="hljs-keyword">var</span> pathToReact = path.resolve(node_modules, <span class="hljs-string">&apos;react/dist/react.min.js&apos;</span>);
@@ -672,7 +675,7 @@ config = {
             loader: <span class="hljs-string">&apos;babel&apos;</span>
         }],
         noParse: [pathToReact]
-    }    
+    }
 };
 
 <span class="hljs-built_in">module</span>.exports = config;
