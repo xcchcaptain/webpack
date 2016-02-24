@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="5.1" data-basepath="." data-revision="Tue Sep 01 2015 10:58:03 GMT+0300 (EEST)">
+    <div class="book" data-level="5.1" data-basepath="." data-revision="Wed Feb 24 2016 13:09:05 GMT+0200 (EET)">
     
 
 <div class="book-summary">
@@ -688,6 +688,8 @@ deps.forEach(<span class="hljs-function"><span class="hljs-keyword">function</sp
 <span class="hljs-built_in">module</span>.exports = config;
 </code></pre>
 <p>Not all modules include a minified distributed version of the lib, but most do. Especially with large libraries like React JS you will get a significant improvement.</p>
+<h4 id="important">Important!</h4>
+<p>Not all modules support module.noParse, the files included by deps array should have no call to <em>require</em>, <em>define</em> or similar, or you will get an error when the app runs: <strong>Uncaught ReferenceError: require is not defined</strong>.</p>
 <h2 id="exposing-react-to-the-global-scope">Exposing React to the global scope</h2>
 <p>You might be using distributed versions that requires React JS on the global scope. To fix that you can install the expose-loader by <code>npm install expose-loader --save-dev</code> and set up the following config, focusing on the <em>module</em> property:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>);

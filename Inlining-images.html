@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="3.4" data-basepath="." data-revision="Tue Sep 01 2015 10:58:03 GMT+0300 (EEST)">
+    <div class="book" data-level="3.4" data-basepath="." data-revision="Wed Feb 24 2016 13:09:05 GMT+0200 (EET)">
     
 
 <div class="book-summary">
@@ -649,7 +649,7 @@
                     
                         <p>Until HTTP/2 is here you want to avoid setting up too many HTTP requests when your application is loading. Depending on the browser you have a set number of requests that can run in parallel. If you load a lot of images in your CSS it is possible to automatically inline these images as BASE64 strings to lower the number of requests required. This can be based on the size of the image. There is a balance of size of download and number of downloads that you have to figure out for your project, and Webpack makes that balance easy to adjust.</p>
 <h2 id="installing-the-url-loader">Installing the url-loader</h2>
-<p><code>npm install url-loader --save-dev</code> will install the loader that can convert resolved paths as BASE64 strings. As mentioned in other sections of this cookbook Webpack will resolve &quot;url()&quot; statements in your CSS as any other require or import statements. This means that if we test on image file extensions for this loader we can run them through it.</p>
+<p><code>npm install url-loader file-loader --save-dev</code> will install the loader that can convert resolved paths as BASE64 strings. As mentioned in other sections of this cookbook Webpack will resolve &quot;url()&quot; statements in your CSS as any other require or import statements. This means that if we test on image file extensions for this loader we can run them through it.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 <span class="hljs-keyword">var</span> config = {
   entry: path.resolve(__dirname, <span class="hljs-string">&apos;app/main.js&apos;</span>)

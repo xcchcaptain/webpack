@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="1.3" data-basepath="." data-revision="Tue Sep 01 2015 10:58:03 GMT+0300 (EEST)">
+    <div class="book" data-level="1.3" data-basepath="." data-revision="Wed Feb 24 2016 13:09:05 GMT+0200 (EET)">
     
 
 <div class="book-summary">
@@ -655,6 +655,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;UTF-8&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://localhost:8080/webpack-dev-server.js&quot;</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;bundle.js&quot;</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
@@ -673,6 +674,9 @@
         path: path.resolve(__dirname, <span class="hljs-string">&apos;build&apos;</span>),
         filename: <span class="hljs-string">&apos;bundle.js&apos;</span>,
     },
+    modulesDirectories: [
+      <span class="hljs-string">&apos;node_modules&apos;</span>
+    ]
 };
 </code></pre>
 <p>Thats it! Now your application will automatically refresh on file changes.</p>

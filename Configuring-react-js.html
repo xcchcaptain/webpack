@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="2.1" data-basepath="." data-revision="Tue Sep 01 2015 10:58:03 GMT+0300 (EEST)">
+    <div class="book" data-level="2.1" data-basepath="." data-revision="Wed Feb 24 2016 13:09:05 GMT+0200 (EET)">
     
 
 <div class="book-summary">
@@ -685,8 +685,9 @@ main();
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
 </span></code></pre>
 <h2 id="converting-jsx">Converting JSX</h2>
-<p>To use the JSX syntax you will need webpack to transform your JavaScript. This is the job of a loader. We&apos;ll use <a href="https://babeljs.io/" target="_blank">Babel</a> as it&apos;s nice and has plenty of features.</p>
-<p><code>npm install babel-loader --save-dev</code></p>
+<p>To use the JSX syntax you will need webpack to transform your JavaScript. This is the job of a loader. We&apos;ll use <a href="https://babeljs.io/" target="_blank">Babel</a> as it&apos;s nice and has plenty of features.
+Below we install the babel-loader with two other presets, es2015 and react.</p>
+<p><code>npm install babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev</code></p>
 <p>Now we have to configure webpack to use this loader.</p>
 <p><em>webpack.config.js</em></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
@@ -705,6 +706,12 @@ main();
 };
 
 <span class="hljs-built_in">module</span>.exports = config;
+</code></pre>
+<p>To configure the babel-loader to use the es2015 and react presets, we create a .babelrc file as shown below.</p>
+<p><em>.babelrc</em></p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;presets&quot;</span>: [ <span class="hljs-string">&quot;es2015&quot;</span>, <span class="hljs-string">&quot;react&quot;</span> ]
+}
 </code></pre>
 <p>Webpack will test each path required in your code. In this project we are using ES6 module loader syntax, which means that the require path of <code>import MyComponent from &apos;./Component.jsx&apos;;</code> is <code>&apos;./Component.jsx&apos;</code>.</p>
 <p>Run <code>npm run dev</code> in the console and refresh the page to see something.</p>
